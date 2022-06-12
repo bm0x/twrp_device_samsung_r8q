@@ -110,6 +110,7 @@ jobs:
         lunch ${{ github.event.inputs.LIBRARY_NAME }}_${{ github.event.inputs.DEVICE_NAME }}-eng
         make clean && make clobber
         mka adbd recoveryimage -j$(nproc --all)
+        tar -cvf recovery.tar ./out/target/product/r8q/recovery.img
         
     - name: Upload to Release
       uses: softprops/action-gh-release@v1
