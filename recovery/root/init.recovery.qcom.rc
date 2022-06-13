@@ -34,5 +34,6 @@ on boot
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+    insmod /vendor/modules/exfat_r8q.ko
 
     export ANDROID_ROOT /system_root
